@@ -1,1 +1,4 @@
-# Advent_of_code_2021
+# Advent of Code 2021
+https://adventofcode.com/2021
+
+Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels
