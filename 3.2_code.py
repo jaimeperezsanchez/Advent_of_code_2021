@@ -19,7 +19,6 @@ for i in range(len(data[0].strip())):
     filtered_data_oxygen = [data[i] for i in indexes_oxygen]
     most_common = find_most_common_in_pos(filtered_data_oxygen, i) 
     copy_of_indexes_oxygen = copy.deepcopy(indexes_oxygen)
-    print(most_common)
     if most_common in [1, 3]:
         for j in copy_of_indexes_oxygen:
             if data[j][i] == '0':
@@ -28,7 +27,6 @@ for i in range(len(data[0].strip())):
         for j in copy_of_indexes_oxygen:
             if data[j][i] == '1':
                 indexes_oxygen.remove(j)
-    print(len(indexes_oxygen))
     if len(indexes_oxygen) == 1:
         Oxygen = data[indexes_oxygen[0]]
         print(Oxygen)
@@ -43,7 +41,6 @@ for i in range(len(data[0].strip())):
     filtered_data_CO2 = [data[i] for i in indexes_CO2]
     most_common = find_most_common_in_pos(filtered_data_CO2, i) 
     copy_of_indexes_CO2 = copy.deepcopy(indexes_CO2)
-    print(most_common)
     if most_common == 0:
         for j in copy_of_indexes_CO2:
             if data[j][i] == '0':
@@ -52,7 +49,6 @@ for i in range(len(data[0].strip())):
         for j in copy_of_indexes_CO2:
             if data[j][i] == '1':
                 indexes_CO2.remove(j)
-    print(len(indexes_CO2))
     if len(indexes_CO2) == 1:
         CO2 = data[indexes_CO2[0]]
         print(CO2)
