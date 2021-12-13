@@ -1,0 +1,97 @@
+with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\5_input.txt', 'r') as f:
+    data = f.readlines()
+
+def check_diagonal_Bottom_right(x1, y1, x2, y2):
+    # x1 < x2 and y1 < y2
+    x_aux = x1
+    y_aux = y1
+    for _ in range(x2-x1+1):
+        x_aux += 1
+        y_aux += 1
+        if x_aux == x2 and y_aux == y2:
+            return True
+    return False
+
+def check_diagonal_Bottom_left(x1, y1, x2, y2):
+    # x1 > x2 and y1 < y2
+    x_aux = x1
+    y_aux = y1
+    for _ in range(x1-x2+1):
+        x_aux -= 1
+        y_aux += 1
+        if x_aux == x2 and y_aux == y2:
+            return True
+    return False
+
+def check_diagonal_Top_right(x1, y1, x2, y2):
+    # x1 < x2 and y1 > y2
+    x_aux = x1
+    y_aux = y1
+    for _ in range(y1-y2+1):
+        x_aux += 1
+        y_aux -= 1
+        if x_aux == x2 and y_aux == y2:
+            return True
+    return False
+
+def check_diagonal_Top_left(x1, y1, x2, y2):
+    # x1 > x2 and y1 > y2
+    x_aux = x1
+    y_aux = y1
+    for _ in range(y1-y2+1):
+        x_aux -= 1
+        y_aux -= 1
+        if x_aux == x2 and y_aux == y2:
+            return True
+    return False
+
+danger_points = []
+for line in data:
+    start = line.split("->")[0].split(",")
+    end = line.split("->")[1].split(",")
+    x1 = int(start[0])
+    y1 = int(start[1])
+    x2 = int(end[0])
+    y2 = int(end[1])
+    # Horizontal lines
+    if x1 == x2:
+        if y1 < y2:
+            for i in range(y1, y2 + 1):
+                danger_points.append((x1, i))
+        elif y1 > y2:
+            for i in range(y2, y1 + 1):
+                danger_points.append((x1, i))
+        else:  # Single poing (x1 == x2 and y1 == y2)
+            danger_points.append((x1, y1))
+    # Vertical lines
+    elif y1 == y2:
+        if x1 < x2:
+            for i in range(x1, x2 + 1):
+                danger_points.append((i, y1))
+        elif x1 > x2:
+            for i in range(x2, x1 + 1):
+                danger_points.append((i, y1))
+    # Diagonal lines
+    else:
+        if x1 < x2 and y1 < y2:  # Bottom right
+            if check_diagonal_Bottom_right(x1, y1, x2, y2):
+                for i in range(x2 - x1 + 1):
+                    danger_points.append((x1+i, y1+i))
+        elif x1 > x2 and y1 < y2:  #Bottom left
+            if check_diagonal_Bottom_left(x1, y1, x2, y2):
+                for i in range(x1 - x2 + 1):
+                    danger_points.append((x1-i, y1+i))
+        elif x1 < x2 and y1 > y2:  # Top right
+            if check_diagonal_Top_right(x1, y1, x2, y2):
+                for i in range(y1 - y2 + 1):
+                    danger_points.append((x1+i, y1-i))
+        elif x1 > x2 and y1 > y2:  # Top left
+            if check_diagonal_Top_left(x1, y1, x2, y2):
+                for i in range(y1 - y2 + 1):
+                    danger_points.append((x1-i, y1-i))
+# Find duplicate points
+extreme_danger_points = {
+    n for n in danger_points if danger_points.count(n) >= 2
+}
+# Print number of extreme danger points (with 2 or more occurrences)
+print(len(extreme_danger_points))
