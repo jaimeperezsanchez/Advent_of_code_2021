@@ -19,7 +19,7 @@ for i, line in enumerate(data):
     line.insert(0, 9999)
     line.append(9999)
 
-## Funciton to heck adjacent points and return the lower point position
+## Funciton to check adjacent points and return if the given point is the lowest or not
 def check_adjacent_points(x, y):
     lowest = True
     value = data[x][y]

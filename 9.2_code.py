@@ -19,7 +19,7 @@ for i, line in enumerate(data):
     line.insert(0, 9999)
     line.append(9999)
 
-## Funciton to heck adjacent points and return the lower point position
+## Funciton to find the lowest adjacent point and return its position
 def find_lowest_adjacent_point(x, y):
     lowest_i = x
     lowest_j = y
