@@ -1,5 +1,5 @@
 # Read the input file 
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\1_input.txt', 'r') as f:
+with open('./1_input.txt', 'r') as f:
     data = f.readlines()
 
 # Set counter to 0
