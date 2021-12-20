@@ -1,6 +1,6 @@
 from statistics import median
 
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\7_input.txt', 'r') as f:
+with open('./7_input.txt', 'r') as f:
     data = f.read()
 
 init_positions = [int(x) for x in data.split(',')]
