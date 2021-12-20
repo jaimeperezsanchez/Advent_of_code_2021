@@ -1,5 +1,5 @@
 # Read the input file 
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\3_input.txt', 'r') as f:
+with open('./3_input.txt', 'r') as f:
     data = f.readlines()
 
 # To simplify we will just sum the 1s and 0s on each position, and check if it's bigger than number_of_lines / 2

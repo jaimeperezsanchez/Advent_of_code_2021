@@ -1,6 +1,6 @@
 import copy
 
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\3_input.txt', 'r') as f:
+with open('./3_input.txt', 'r') as f:
     data = f.readlines()
 
 def find_most_common_in_pos(lst, pos):
