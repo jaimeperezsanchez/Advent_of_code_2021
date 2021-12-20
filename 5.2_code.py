@@ -1,4 +1,4 @@
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\5_input.txt', 'r') as f:
+with open('./5_input.txt', 'r') as f:
     data = f.readlines()
 
 def check_diagonal_Bottom_right(x1, y1, x2, y2):
