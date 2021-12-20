@@ -1,5 +1,5 @@
 # Read the input file 
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\2_input.txt', 'r') as f:
+with open('./2_input.txt', 'r') as f:
     data = f.readlines()
 
 # Set to 0 the positions
