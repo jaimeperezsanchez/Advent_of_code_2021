@@ -1,4 +1,4 @@
-with open(r'C:\Users\jperezs\OneDrive - Universidad Pontificia Comillas\Documentos\Python Scripts\Advent_of_code_2021\6_input.txt', 'r') as f:
+with open('./6_input.txt', 'r') as f:
     data = f.read()
 
 init = [int(x) for x in data.split(',')]
