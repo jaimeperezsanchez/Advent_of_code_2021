@@ -1,6 +1,3 @@
-from functools import total_ordering
-
-
 with open('./Day_10_input.txt', 'r') as f:
     data = f.readlines()
 
@@ -23,7 +20,8 @@ def get_score(line):
                     return 1197
                 elif char == '>':
                     return 25137
-    if stack:
+    if not stack:
+        # Empty list
         return 0
     else:
         # Incomplete sequences
