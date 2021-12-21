@@ -37,10 +37,5 @@ def main():
 if __name__ == '__main__':
     open_chunk = '([{<'
     close_chunk = ')]}>'
-    points = {
-            ')': 3,
-            ']': 57,
-            '}': 1197,
-            '>': 25137}   
     main()
     
