@@ -15,17 +15,17 @@ def main():
     pairs = defaultdict(int)
     for i in range(len(template) - 1):
         pairs[template[i] + template[i+1]] += 1
-    
+
     for _ in range(n_steps):
         tmp_dict = defaultdict(int)
-        for pair in pairs:
+        for pair, value in pairs.items():
             tmp_dict[pair[0] + rules[pair]] += pairs[pair]
-            tmp_dict[rules[pair] + pair[1]] += pairs[pair]
+            tmp_dict[rules[pair] + pair[1]] += value
         pairs = tmp_dict
-    
+
     elements = defaultdict(int)
-    for pair in pairs:
-        elements[pair[0]] += pairs[pair]
+    for pair, value_ in pairs.items():
+        elements[pair[0]] += value_
     elements[template[-1]] += 1
 
     return print(max(elements.values()) - min(elements.values()))

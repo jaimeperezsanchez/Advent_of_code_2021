@@ -11,18 +11,16 @@ def read_input():
 def count_rules(template, rule):
     template_list = list(template)
     A, B = rule[0], rule[1]
-    n_rule = 0
-    for i, letter in enumerate(template_list):
-        if letter == B and i > 0:
-            if template_list[i-1] == A:
-                n_rule += 1
-    return n_rule
+    return sum(
+        letter == B and i > 0 and template_list[i - 1] == A
+        for i, letter in enumerate(template_list)
+    )
 
 def main():
     # Read input
     template, rules = read_input()
     n_steps = 10
-    for step in range(n_steps):
+    for _ in range(n_steps):
         rules_applied = []
         # Check what rules are fulfilled
         for rule in rules:
