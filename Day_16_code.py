@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.core.numeric import binary_repr
 
 def read_input():
     with open('./Day_16_input.txt', 'r') as f:
