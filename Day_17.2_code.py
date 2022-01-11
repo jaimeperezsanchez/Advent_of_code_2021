@@ -28,8 +28,10 @@ def main():
                 if vx != 0:
                     vx = vx - 1
                 vy -= 1
+                # No hit
                 if pos_x > x_max or pos_y < y_min:
                     break
+                # Hit
                 elif x_min <= pos_x <= x_max and y_min <= pos_y <= ymax:
                     hits += 1
                     break
