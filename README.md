@@ -22,7 +22,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 |     15     |  ⭐⭐  | 
 |     16     |  ⭐⭐  |  
 |     17     |  ⭐⭐  | 
-|     18     |         |  
+|     18     |  ⭐⭐  |  
 |     19     |         |  
 |     20     |         |  
 |     21     |         |  
